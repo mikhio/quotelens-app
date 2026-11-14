@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://prist.ru/about/",
+    "retrieved_at": "2026-11-11T19:36:34.875168+00:00",
+    "sha256": "5b4d4c435c387a1724cd60b8d459f2a77c1cf01d4060dd3408149f34b79fecf1",
+    "evidence_excerpts": [
+      "ИНН: 7721212396"
+    ]
+  },
+  {
+    "url": "https://www.souz-pribor.ru/o-kompanii/ustavnye-dokumenty/",
+    "retrieved_at": "2026-11-11T19:36:34.704024+00:00",
+    "sha256": "972a58f6e3d6127026cab5813d6ebcfc7be3cc2d9a95852498f680ccdafe9950",
+    "evidence_excerpts": [
+      "ИНН 1657012967"
+    ]
+  },
+  {
+    "url": "https://www.elizpribor.ru/contacts/",
+    "retrieved_at": "2026-11-11T19:36:34.606127+00:00",
+    "sha256": "e4e56672e0e8ff1ef7a70dedac4bbfe10b3cc2ea7446edec7730ccf2a07d9013",
+    "evidence_excerpts": [
+      "ИНН: 3528068281"
+    ]
+  }
+]

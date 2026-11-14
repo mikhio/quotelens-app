@@ -1,0 +1,45 @@
+services:
+  quotelens:
+    build: .
+    ports:
+      - "${QUOTELENS_BIND_IP:-127.0.0.1}:${QUOTELENS_PORT:-8765}:8000"
+    environment:
+      MODEL_API_BASE: ${MODEL_API_BASE:-}
+      MODEL_NAME: ${MODEL_NAME:-}
+      MODEL_API_KEY: ${MODEL_API_KEY:-}
+      MODEL_API_KEY_FILE: /run/secrets/model_api_key
+      MODEL_JSON_MODE: ${MODEL_JSON_MODE:-1}
+      MODEL_ALLOW_NO_AUTH: ${MODEL_ALLOW_NO_AUTH:-0}
+      SEARCH_API_URL: ${SEARCH_API_URL:-}
+      SEARCH_API_KEY: ${SEARCH_API_KEY:-}
+      SOURCE_ALLOWED_DOMAINS: ${SOURCE_ALLOWED_DOMAINS:-}
+      APP_SEARCH_RUNS_DAY: ${APP_SEARCH_RUNS_DAY:-0}
+      APP_MODEL_CALLS_TOTAL: ${APP_MODEL_CALLS_TOTAL:-10000}
+      APP_MODEL_TOKENS_TOTAL: ${APP_MODEL_TOKENS_TOTAL:-1500000}
+      APP_MODEL_MICRO_USD_TOTAL: ${APP_MODEL_MICRO_USD_TOTAL:-2000000}
+      MODEL_INPUT_MICRO_USD: ${MODEL_INPUT_MICRO_USD:-1}
+      MODEL_OUTPUT_MICRO_USD: ${MODEL_OUTPUT_MICRO_USD:-5}
+      APP_ALLOWED_ORIGIN: ${APP_ALLOWED_ORIGIN:-}
+      APP_ACTUAL_COST_SETTLEMENT: ${APP_ACTUAL_COST_SETTLEMENT:-0}
+      APP_PUBLIC_SHARE_BASE: ${APP_PUBLIC_SHARE_BASE:-/api/shared/}
+    secrets:
+      - model_api_key
+    volumes:
+      - results:/runtime
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m,mode=1777
+    shm_size: 256m
+    mem_limit: 1400m
+    cpus: 1.5
+    pids_limit: 256
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  results:
+secrets:
+  model_api_key:
+    file: ${MODEL_KEY_FILE:-./secrets/model.key}

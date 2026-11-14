@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/",
+    "final_url": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/",
+    "retrieved_at": "2026-11-11T19:35:30.268801+00:00",
+    "status": "retrieved",
+    "sha256": "74f2a297902ff84174de473cbd3e7b128ce2ce8aae7ba8031953e88a9864828f",
+    "evidence_excerpts": [
+      "АКИП-4131/1В",
+      "Цена (с НДС): 69 065 Р",
+      "Число каналов 4",
+      "Полоса пропускания 100 МГц"
+    ],
+    "capture_note": "Прямой HTTP GET. Сохранены короткие выдержки; SHA-256 относится к исходному HTML, который не распространяется."
+  },
+  {
+    "url": "https://www.souz-pribor.ru/product/akip-4131-1v/",
+    "final_url": "https://www.souz-pribor.ru/product/akip-4131-1v/",
+    "retrieved_at": "2026-11-11T19:35:30.066349+00:00",
+    "status": "retrieved",
+    "sha256": "2d9666729b1b253cdf066b3f4c37b0b0394d2ab79f25bb620a83c8579789b392",
+    "evidence_excerpts": [
+      "АКИП-4131/1В",
+      "69 065 ₽ с НДС 22%",
+      "Число каналов 4",
+      "Полоса пропускания 100 МГц"
+    ],
+    "capture_note": "Прямой HTTP GET. Сохранены короткие выдержки; SHA-256 относится к исходному HTML, который не распространяется."
+  },
+  {
+    "url": "https://www.elizpribor.ru/catalog/radioizmeritelnye-pribory/ostsillografy-tsifrovye-i-analogovye/ostsillografy-akip/-akip-41311v.htm",
+    "final_url": "https://www.elizpribor.ru/catalog/radioizmeritelnye-pribory/ostsillografy-tsifrovye-i-analogovye/ostsillografy-akip/-akip-41311v.htm",
+    "retrieved_at": "2026-11-11T19:35:32.029951+00:00",
+    "status": "retrieved",
+    "sha256": "43f760aff78567bf8fbdfffb2b626cbd40c5b3d0d82b5db0ab45bddf7d2f2ebb",
+    "evidence_excerpts": [
+      "АКИП-4131/1В",
+      "69 065 руб. с НДС",
+      "Количество каналов 4",
+      "Полоса пропускания 100 МГц"
+    ],
+    "capture_note": "Прямой HTTP GET. Сохранены короткие выдержки; SHA-256 относится к исходному HTML, который не распространяется."
+  },
+  {
+    "url": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076",
+    "final_url": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076",
+    "retrieved_at": "2026-11-11T19:35:30.733756+00:00",
+    "status": "retrieved",
+    "sha256": "036ce6dc031279e5fb91241e640aec5d619474143f6491ea40d8192db56d992d",
+    "evidence_excerpts": [
+      "ADS-2031",
+      "Розничная цена (вкл. НДС): 27 450,00 руб.",
+      "Количество каналов 2",
+      "Полоса пропускания 30 MГц"
+    ],
+    "capture_note": "Прямой HTTP GET. Сохранены короткие выдержки; SHA-256 относится к исходному HTML, который не распространяется."
+  }
+]

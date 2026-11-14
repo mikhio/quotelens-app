@@ -1,0 +1,226 @@
+{
+  "request_description": "Осциллограф цифровой АКИП-4131/1В, 4 канала, полоса не менее 100 МГц",
+  "quantity": 3,
+  "offers": [
+    {
+      "id": "snapshot-prist",
+      "title": "АКИП-4131/1В — Осциллограф цифровой",
+      "supplier": "ПриСТ",
+      "domain": "prist.ru",
+      "url": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/",
+      "retrieved_at": "2026-11-11T19:35:30.268801+00:00",
+      "price": 69065,
+      "unit": "шт",
+      "pack_size": 1,
+      "currency": "RUB",
+      "tax": "included",
+      "delivery": null,
+      "attributes": {
+        "model": "АКИП-4131/1В",
+        "channels": 4,
+        "bandwidth_mhz": 100,
+        "supplier_inn": "7721212396"
+      },
+      "evidence": {
+        "price": {
+          "quote": "Цена (с НДС): 69 065 Р",
+          "url": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/"
+        },
+        "tax": {
+          "quote": "Цена (с НДС): 69 065 Р",
+          "url": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/"
+        },
+        "attributes.model": {
+          "quote": "АКИП-4131/1В",
+          "url": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/"
+        },
+        "attributes.channels": {
+          "quote": "Число каналов 4",
+          "url": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/"
+        },
+        "attributes.bandwidth_mhz": {
+          "quote": "Полоса пропускания 100 МГц",
+          "url": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/"
+        },
+        "attributes.supplier_inn": {
+          "quote": "ИНН: 7721212396",
+          "url": "https://prist.ru/about/"
+        }
+      },
+      "provenance": "snapshot",
+      "unit_inference": "цена отнесена к одному прибору по отдельной карточке указанной модели; явного подтверждения «цена за 1 шт.» в сохранённых цитатах нет",
+      "data_note": "Реальная цена и характеристики сохранены из источника. Единица «шт» — отмеченная интерпретация карточки прибора, требует подтверждения продавца."
+    },
+    {
+      "id": "snapshot-souz",
+      "title": "АКИП-4131/1В — Осциллограф цифровой",
+      "supplier": "СОЮЗ-ПРИБОР",
+      "domain": "souz-pribor.ru",
+      "url": "https://www.souz-pribor.ru/product/akip-4131-1v/",
+      "retrieved_at": "2026-11-11T19:35:30.066349+00:00",
+      "price": 69065,
+      "unit": "шт",
+      "pack_size": 1,
+      "currency": "RUB",
+      "tax": "included",
+      "delivery": null,
+      "attributes": {
+        "model": "АКИП-4131/1В",
+        "channels": 4,
+        "bandwidth_mhz": 100,
+        "supplier_inn": "1657012967"
+      },
+      "evidence": {
+        "price": {
+          "quote": "69 065 ₽ с НДС 22%",
+          "url": "https://www.souz-pribor.ru/product/akip-4131-1v/"
+        },
+        "tax": {
+          "quote": "69 065 ₽ с НДС 22%",
+          "url": "https://www.souz-pribor.ru/product/akip-4131-1v/"
+        },
+        "attributes.model": {
+          "quote": "АКИП-4131/1В",
+          "url": "https://www.souz-pribor.ru/product/akip-4131-1v/"
+        },
+        "attributes.channels": {
+          "quote": "Число каналов 4",
+          "url": "https://www.souz-pribor.ru/product/akip-4131-1v/"
+        },
+        "attributes.bandwidth_mhz": {
+          "quote": "Полоса пропускания 100 МГц",
+          "url": "https://www.souz-pribor.ru/product/akip-4131-1v/"
+        },
+        "attributes.supplier_inn": {
+          "quote": "ИНН 1657012967",
+          "url": "https://www.souz-pribor.ru/o-kompanii/ustavnye-dokumenty/"
+        }
+      },
+      "provenance": "snapshot",
+      "unit_inference": "цена отнесена к одному прибору по отдельной карточке указанной модели; явного подтверждения «цена за 1 шт.» в сохранённых цитатах нет",
+      "data_note": "Реальная цена и характеристики сохранены из источника. Единица «шт» — отмеченная интерпретация карточки прибора, требует подтверждения продавца."
+    },
+    {
+      "id": "snapshot-eliz",
+      "title": "АКИП-4131/1В — Осциллограф цифровой",
+      "supplier": "Элиз",
+      "domain": "elizpribor.ru",
+      "url": "https://www.elizpribor.ru/catalog/radioizmeritelnye-pribory/ostsillografy-tsifrovye-i-analogovye/ostsillografy-akip/-akip-41311v.htm",
+      "retrieved_at": "2026-11-11T19:35:32.029951+00:00",
+      "price": 69065,
+      "unit": "шт",
+      "pack_size": 1,
+      "currency": "RUB",
+      "tax": "included",
+      "delivery": null,
+      "attributes": {
+        "model": "АКИП-4131/1В",
+        "channels": 4,
+        "bandwidth_mhz": 100,
+        "supplier_inn": "3528068281"
+      },
+      "evidence": {
+        "price": {
+          "quote": "69 065 руб. с НДС",
+          "url": "https://www.elizpribor.ru/catalog/radioizmeritelnye-pribory/ostsillografy-tsifrovye-i-analogovye/ostsillografy-akip/-akip-41311v.htm"
+        },
+        "tax": {
+          "quote": "69 065 руб. с НДС",
+          "url": "https://www.elizpribor.ru/catalog/radioizmeritelnye-pribory/ostsillografy-tsifrovye-i-analogovye/ostsillografy-akip/-akip-41311v.htm"
+        },
+        "attributes.model": {
+          "quote": "АКИП-4131/1В",
+          "url": "https://www.elizpribor.ru/catalog/radioizmeritelnye-pribory/ostsillografy-tsifrovye-i-analogovye/ostsillografy-akip/-akip-41311v.htm"
+        },
+        "attributes.channels": {
+          "quote": "Количество каналов 4",
+          "url": "https://www.elizpribor.ru/catalog/radioizmeritelnye-pribory/ostsillografy-tsifrovye-i-analogovye/ostsillografy-akip/-akip-41311v.htm"
+        },
+        "attributes.bandwidth_mhz": {
+          "quote": "Полоса пропускания 100 МГц",
+          "url": "https://www.elizpribor.ru/catalog/radioizmeritelnye-pribory/ostsillografy-tsifrovye-i-analogovye/ostsillografy-akip/-akip-41311v.htm"
+        },
+        "attributes.supplier_inn": {
+          "quote": "ИНН: 3528068281",
+          "url": "https://www.elizpribor.ru/contacts/"
+        }
+      },
+      "provenance": "snapshot",
+      "unit_inference": "цена отнесена к одному прибору по отдельной карточке указанной модели; явного подтверждения «цена за 1 шт.» в сохранённых цитатах нет",
+      "data_note": "Реальная цена и характеристики сохранены из источника. Единица «шт» — отмеченная интерпретация карточки прибора, требует подтверждения продавца."
+    },
+    {
+      "id": "snapshot-aktakom",
+      "title": "ADS-2031 — Осциллограф цифровой",
+      "supplier": "АКТАКОМ",
+      "domain": "aktakom.ru",
+      "url": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076",
+      "retrieved_at": "2026-11-11T19:35:30.733756+00:00",
+      "price": 27450,
+      "unit": "шт",
+      "pack_size": 1,
+      "currency": "RUB",
+      "tax": "included",
+      "delivery": null,
+      "attributes": {
+        "model": "ADS-2031",
+        "channels": 2,
+        "bandwidth_mhz": 30
+      },
+      "evidence": {
+        "price": {
+          "quote": "Розничная цена (вкл. НДС): 27 450,00 руб.",
+          "url": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076"
+        },
+        "tax": {
+          "quote": "Розничная цена (вкл. НДС): 27 450,00 руб.",
+          "url": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076"
+        },
+        "attributes.model": {
+          "quote": "ADS-2031",
+          "url": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076"
+        },
+        "attributes.channels": {
+          "quote": "Количество каналов 2",
+          "url": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076"
+        },
+        "attributes.bandwidth_mhz": {
+          "quote": "Полоса пропускания 30 MГц",
+          "url": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076"
+        }
+      },
+      "provenance": "snapshot",
+      "unit_inference": "цена отнесена к одному прибору по отдельной карточке указанной модели; явного подтверждения «цена за 1 шт.» в сохранённых цитатах нет",
+      "data_note": "Реальная цена и характеристики сохранены из источника. Единица «шт» — отмеченная интерпретация карточки прибора, требует подтверждения продавца."
+    }
+  ],
+  "source_statuses": [
+    {
+      "name": "ПриСТ",
+      "domain": "prist.ru",
+      "status": "captured",
+      "message": "Публичная страница получена напрямую по HTTP; это сохранённый снимок, цена могла измениться."
+    },
+    {
+      "name": "СОЮЗ-ПРИБОР",
+      "domain": "souz-pribor.ru",
+      "status": "captured",
+      "message": "Публичная страница получена напрямую по HTTP; это сохранённый снимок, цена могла измениться."
+    },
+    {
+      "name": "Элиз",
+      "domain": "elizpribor.ru",
+      "status": "captured",
+      "message": "Публичная страница получена напрямую по HTTP; это сохранённый снимок, цена могла измениться."
+    },
+    {
+      "name": "АКТАКОМ",
+      "domain": "aktakom.ru",
+      "status": "captured",
+      "message": "Публичная страница получена напрямую по HTTP; это сохранённый снимок, цена могла измениться."
+    }
+  ],
+  "kind": "real_snapshot",
+  "captured_at": "2026-11-11T19:35:32.029951+00:00",
+  "capture_note": "Реальные публичные страницы, сохранённые 11.11.2026 UTC. Цена прибора без дополнительной поверки. Доставка неизвестна. Юридическая аффилированность не исследована. Единица цены «шт» интерпретирована по отдельным карточкам приборов; источники в сохранённых выдержках явно не подтверждают цену за одну штуку."
+}

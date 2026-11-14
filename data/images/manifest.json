@@ -1,0 +1,22 @@
+[
+  {
+    "file": "akip-4131-1v.jpg",
+    "model": "АКИП-4131/1В",
+    "url": "https://prist.ru/upload/resize_cache/iblock/12a/yni3y4mv13377qwnebcud77nwclk539o/355_290_1/AKIP_4131V_front.jpg",
+    "source_page": "https://prist.ru/catalog/ostsillografy_tsifrovye/akip_4131_1v/",
+    "mime": "image/jpeg",
+    "retrieved_at": "2026-11-11T22:31:14+00:00",
+    "bytes": 14584,
+    "sha256": "7964fb94d902fc3388887da28a33ad8c551fa244a1a5ac91bf1b9cf4b52e8127"
+  },
+  {
+    "file": "ads-2031.jpg",
+    "model": "ADS-2031",
+    "url": "https://www.aktakom.ru/upload/iblock/a91/08x76mn6pm80saqdjjvlnibiw8hraot5/ADS-2031.jpg",
+    "source_page": "https://www.aktakom.ru/kio/index.php?ELEMENT_ID=11288908&SECTION_ID=2076",
+    "mime": "image/jpeg",
+    "retrieved_at": "2026-11-11T22:31:16+00:00",
+    "bytes": 71194,
+    "sha256": "1f1a3a31c388600e7849729a3e0a932ee6dcdfd872d759cbcb0242b145591ff6"
+  }
+]

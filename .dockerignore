@@ -1,0 +1,11 @@
+.git
+.env
+.env.*
+.runtime
+__pycache__
+*.pyc
+.venv
+secrets
+test-results
+*.tar.gz
+*.zip

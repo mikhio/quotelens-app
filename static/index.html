@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#702c40">
+  <title>QuoteLens — анализ закупки</title>
+  <link rel="preload" href="./static/fonts/golos-text.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="./static/fonts/literata.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="./static/style.css">
+  <script src="./static/app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 5h11M9 12h11M9 19h11M4 5h1M4 12h1M4 19h1"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6L10 14M10 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M13 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9Zm0 0v6h6M9 13h6m-6 4h6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="9" r="1.5"/><path d="m4 18 5-5 3 3 4-6 5 8"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M20 12H4m6-6-6 6 6 6"/></symbol>
+    <symbol id="i-select-all" viewBox="0 0 24 24"><path d="M8 3H4a1 1 0 0 0-1 1v4m13-5h4a1 1 0 0 1 1 1v4M3 16v4a1 1 0 0 0 1 1h4m8 0h4a1 1 0 0 0 1-1v-4"/><path d="m7 12 3 3 7-7"/></symbol>
+    <symbol id="i-clear-all" viewBox="0 0 24 24"><path d="M8 3H4a1 1 0 0 0-1 1v4m13-5h4a1 1 0 0 1 1 1v4M3 16v4a1 1 0 0 0 1 1h4m8 0h4a1 1 0 0 0 1-1v-4M8 12h8"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="app-header"><a class="brand" href="./" aria-label="QuoteLens — анализ закупки"><span class="brand-mark" aria-hidden="true"></span>QuoteLens</a><a id="all-searches" class="all-searches" href="./" hidden>Все закупки</a><button id="open-costs" type="button" class="text-button header-costs">Расходы</button></header>
+  <main id="main" tabindex="-1">
+    <div class="workspace-content">
+    <h1 class="page-title" id="page-title">Новая закупка</h1>
+    <div id="global-error" class="error-notice" role="alert" hidden></div>
+    <section id="query-summary" class="query-summary" aria-label="Текущий запрос" hidden><div><h1><button type="button" id="query-heading" data-query-toggle aria-controls="search-form" aria-expanded="false"></button></h1><p id="query-meta"></p></div><button type="button" id="edit-query" class="button button-secondary" aria-controls="search-form" aria-expanded="false">Запрос и ТЗ<svg aria-hidden="true"><use href="#i-chevron"/></svg></button></section>
+    <form id="search-form" class="search-form">
+      <section id="request-input" class="request-input" aria-label="Техническое задание">
+      <label class="field-label" for="description">Описание закупки</label>
+      <p class="field-hint" id="input-method-hint">Введите текст, прикрепите файлы или используйте оба способа — учтём всё вместе.</p>
+      <textarea id="description" name="description" rows="5" maxlength="120000" aria-describedby="input-method-hint" placeholder="Какие товары нужны, в каком количестве и с какими характеристиками?"></textarea>
+      <div class="spec-upload-heading"><span>Файлы технического задания</span><span class="muted">Необязательно</span></div>
+      <div class="spec-upload-row"><button id="attach-files" type="button" class="button button-secondary"><svg aria-hidden="true"><use href="#i-doc"/></svg>Прикрепить файлы</button><input id="spec-files" type="file" multiple accept=".docx,.txt,.md,.pdf" hidden><span class="muted">DOCX, TXT, MD или PDF с текстом</span></div>
+      <p id="data-boundary" class="data-boundary">Только открытые данные. Текст запроса и ТЗ обрабатывается внешней моделью.</p>
+      <ul id="spec-file-list" class="spec-file-list" aria-label="Прикреплённые файлы"></ul>
+      <div class="input-stage-actions"><button id="prepare-spec" type="button" class="button button-primary">Проверить позиции<svg aria-hidden="true"><use href="#i-chevron"/></svg></button></div>
+      </section>
+      <p id="spec-preparation" class="spec-preparation" role="status" hidden></p>
+      <section id="spec-preview" class="spec-preview" aria-labelledby="spec-preview-heading" hidden><div class="spec-preview-heading"><h2 id="spec-preview-heading">Позиции закупки</h2><span id="spec-item-count" class="muted"></span></div><div id="spec-warnings" class="spec-warnings" role="status" hidden></div><div class="draft-review-layout"><nav id="draft-item-navigation" aria-label="Позиции технического задания"></nav><div id="spec-items"></div></div></section>
+      <div id="draft-stage-actions" class="stage-action-row"></div>
+      <section id="research-settings" class="research-settings" aria-label="Параметры исследования">
+      <p class="search-target">Цель: <strong>3 сопоставимых предложения на каждую позицию</strong></p>
+      <section class="search-options" aria-labelledby="stop-mode-heading">
+        <h2 id="stop-mode-heading" class="search-options-heading">Когда завершить поиск</h2>
+        <div class="search-policy" aria-describedby="search-policy-hint">
+          <div class="stop-mode-field">
+            <select id="stop-mode" hidden aria-hidden="true" tabindex="-1"><option value="target">Когда позиции готовы к расчёту</option><option value="offers">Когда найдено нужное число цен</option><option value="time">Когда истечёт время</option></select>
+            <fieldset id="stop-mode-cards" class="stop-mode-cards">
+              <legend class="sr-only">Условие завершения поиска</legend>
+              <label class="stop-mode-card"><input type="radio" name="stop_mode_radio" value="target" checked><span><strong>По готовности позиций</strong><small>По 3 сопоставимых предложения для расчёта каждой позиции.</small></span></label>
+              <label class="stop-mode-card"><input type="radio" name="stop_mode_radio" value="offers"><span><strong>По числу предложений</strong><small>Найти заданное число цен. Условия проверяются отдельно.</small></span></label>
+              <label class="stop-mode-card"><input type="radio" name="stop_mode_radio" value="time"><span><strong>По времени</strong><small>Сохранить всё найденное к концу заданного времени.</small></span></label>
+            </fieldset>
+          </div>
+          <div id="offer-limit-field" hidden><label for="max-offers">Найденных цен на закупку</label><input id="max-offers" type="number" min="1" max="100" step="1" value="100" inputmode="numeric"></div>
+          <div><label id="search-minutes-label" for="search-minutes">Не дольше, минут</label><input id="search-minutes" type="number" min="0.016666666666" max="60" step="any" value="10" inputmode="decimal"></div>
+          <p id="search-policy-hint">Для расчёта нужны предложения с подходящими характеристиками и сопоставимыми условиями.</p>
+        </div>
+      </section>
+      <div class="form-controls">
+        <div id="single-quantity-field" class="quantity-field"><label for="quantity">Количество</label><input id="quantity" name="quantity" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" value="1" required></div>
+        <details id="source-picker" class="source-picker">
+          <summary id="source-picker-summary">Поиск: весь интернет<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="source-bulk-actions" role="group" aria-label="Выбор источников">
+            <button type="button" class="icon-button" data-source-select-all aria-label="Выбрать все доступные источники" title="Выбрать все доступные источники"><svg aria-hidden="true"><use href="#i-select-all"/></svg></button>
+            <button type="button" class="icon-button" data-source-clear-all aria-label="Снять выбор всех источников" title="Снять выбор всех источников"><svg aria-hidden="true"><use href="#i-clear-all"/></svg></button>
+          </div>
+          <fieldset id="source-options" class="source-options"><legend class="sr-only">Область поиска</legend></fieldset>
+        </details>
+        <span id="source-error" class="source-error" role="alert" hidden></span>
+        <button id="search-submit" type="submit" class="button button-primary"><svg aria-hidden="true"><use href="#i-search"/></svg>Начать поиск</button>
+      </div>
+      </section>
+    </form>
+    <section id="progress-screen" class="progress-panel" aria-label="Поиск предложений" aria-live="polite" hidden><span class="spinner" aria-hidden="true"></span><div class="progress-main"><h2 id="progress-heading">Ищем предложения</h2><p id="progress-description">Проверяем выбранные источники.</p><p id="progress-offers" class="progress-offers"></p><details id="search-progress-sources" class="search-progress-sources"><summary>Посещённые источники <span id="search-progress-count"></span></summary><ul id="search-progress-list"></ul></details></div><span id="elapsed-time" class="elapsed">00:00</span><button id="cancel-search" type="button" class="button button-secondary">Остановить</button></section>
+    <section id="result-screen" aria-label="Результаты поиска" hidden>
+      <p id="result-description" class="sr-only"></p>
+      <div class="results-topline"><h2>Результаты поиска <span id="offers-count"></span></h2><span id="result-date" class="muted"></span><span id="synthetic-label" class="synthetic-label" hidden>Учебные данные</span></div>
+      <p id="partial-result-notice" class="partial-result-notice" role="status" hidden>Поиск продолжается. Уже найденные предложения доступны для просмотра; решения можно сохранить после завершения.</p>
+      <p id="validation-notice" class="validation-notice" role="status" hidden></p>
+      <div class="results-layout">
+        <nav id="item-navigation" class="item-navigation" aria-label="Позиции закупки"></nav>
+        <section class="comparison" aria-label="Сравнение предложений">
+          <div id="selected-item-heading" class="selected-item-heading"></div>
+          <div class="comparison-toolbar">
+            <div class="offer-search"><label class="sr-only" for="offer-search">Найти в предложениях</label><input id="offer-search" type="search" placeholder="Найти в предложениях" autocomplete="off"></div>
+            <details id="result-filters" class="result-filters"><summary>Фильтры <span id="active-filter-count" hidden></span><svg aria-hidden="true"><use href="#i-chevron"/></svg></summary><div class="filter-popover">
+            <div id="item-filter-field" class="facet" hidden><label for="item-filter">Позиция закупки</label><select id="item-filter"><option value="all">Все позиции</option></select></div>
+            <div class="facet"><label for="status-filter">Статус</label><select id="status-filter"><option value="all">Все</option><option value="included">В расчёте</option><option value="excluded">Вне расчёта</option><option value="uncertain">Нужны уточнения</option></select></div>
+            <div class="facet source-facet"><label for="source-filter">Источник</label><select id="source-filter"><option value="all">Все источники</option></select></div>
+            </div></details>
+            <div class="layout-switch" role="group" aria-label="Вид предложений"><button id="layout-list" class="icon-button active" type="button" aria-label="Список" aria-pressed="true" title="Список"><svg aria-hidden="true"><use href="#i-list"/></svg></button><button id="layout-grid" class="icon-button" type="button" aria-label="Сетка" aria-pressed="false" title="Сетка"><svg aria-hidden="true"><use href="#i-grid"/></svg></button></div>
+          </div>
+          <p id="visible-count" class="visible-count" aria-live="polite"></p>
+          <nav id="offer-pagination-top" class="offer-pagination offer-pagination-top" aria-label="Страницы предложений сверху"></nav>
+          <div id="offer-list" class="offer-list"></div>
+          <nav id="offer-pagination" class="offer-pagination" aria-label="Страницы предложений"></nav>
+        </section>
+        <aside id="calculation-summary" class="calculation-summary" aria-label="Расчёт стоимости"></aside>
+      </div>
+    </section>
+    <section id="search-history" class="search-history" aria-labelledby="history-heading">
+      <div class="history-heading"><h2 id="history-heading">Все поиски <span id="history-total"></span></h2><button id="history-refresh" type="button" class="text-button">Обновить</button></div>
+      <p id="history-loading" class="muted" role="status">Загружаем поиски…</p>
+      <div id="history-error" class="error-notice" role="alert" hidden></div>
+      <p id="history-empty" class="history-empty" hidden>Поисков пока нет. Начните новый поиск выше.</p>
+      <ul id="history-list" class="history-list"></ul>
+      <button id="history-more" type="button" class="button button-secondary" hidden>Показать ещё</button>
+    </section>
+    </div>
+    <aside class="workflow-rail" aria-label="Состояние закупки">
+      <p class="workflow-label">Этап закупки</p>
+      <ol id="procurement-stages">
+        <li data-workflow-stage="input" class="workflow-stage-current" aria-current="step"><span class="stage-orb" aria-hidden="true">1</span><span class="stage-name">Техническое задание</span></li>
+        <li data-workflow-stage="review"><span class="stage-orb" aria-hidden="true">2</span><span class="stage-name">Проверка позиций</span></li>
+        <li data-workflow-stage="research"><span class="stage-orb" aria-hidden="true">3</span><span class="stage-name">Поиск и расчёт</span></li>
+      </ol>
+    </aside>
+  </main>
+  <dialog id="costs-dialog" class="costs-dialog" aria-labelledby="costs-title"><div class="costs-heading"><h2 id="costs-title">Расходы на поиск</h2><button id="close-costs" type="button" class="icon-button" aria-label="Закрыть расходы">×</button></div><div id="costs-body" aria-live="polite"></div></dialog>
+  <div id="evidence-backdrop" class="evidence-backdrop" hidden></div>
+  <dialog id="evidence-dialog" class="evidence-dialog" aria-modal="false" aria-labelledby="evidence-title"><div class="drawer-header"><span>Проверка предложения</span><div class="evidence-navigation"><button type="button" class="icon-button" id="previous-evidence" aria-label="Предыдущее предложение">←</button><span id="evidence-position"></span><button type="button" class="icon-button" id="next-evidence" aria-label="Следующее предложение">→</button><button type="button" class="icon-button" id="close-evidence" aria-label="Закрыть доказательства"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div></div><div id="evidence-body"></div></dialog>
+</body>
+</html>
